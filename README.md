@@ -8,4 +8,4 @@ Components required:
 -> Yellow Leds (4)
 -> Jumper wires( as required)
 -> USB Cable(to connect your laptop to the Arduino Uno Board)
--> Resistors
+-> Resistors(no.s 12)
