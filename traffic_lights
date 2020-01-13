@@ -1,0 +1,51 @@
+int LedPin[4][3] = {2,3,4,5,6,7,8,9,10,11,12,13}; // 4-ways, 3 signals(R,Y,G) on each way 
+void setup() 
+{
+  // put your setup code here, to run once:
+  for (int i = 0; i<4; i++)
+  {
+    for (int j = 0; j<3; j++)
+    {
+      pinMode(LedPin[i][j] , OUTPUT);
+    }
+  }
+}
+int j = 0; 
+void loop() 
+{
+  for (int i = 0; i<4; i++)
+  {
+    if(j==i)
+    {
+      digitalWrite(LedPin[i][2], HIGH);
+    }
+    else
+    {
+      digitalWrite(LedPin[i][0], HIGH);
+    }
+  }
+  delay(5000);
+  digitalWrite(LedPin[j][2], LOW);
+  digitalWrite(LedPin[j][1], HIGH);
+  delay(1000);
+  digitalWrite(LedPin[j][1], LOW);
+  digitalWrite(LedPin[j][0], HIGH);
+  if (j == 3)
+  {
+    j = 0;
+  }
+  else
+  {
+    j+=1;
+  }
+  for (int i = 0; i<4; i++)
+  {
+    for (int j = 0; j<3; j++)
+    {
+      digitalWrite(LedPin[i][j] , LOW);
+    }
+  }
+
+
+  
+}
